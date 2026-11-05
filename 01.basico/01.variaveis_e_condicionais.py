@@ -3,6 +3,7 @@
 # =============================
 # 1. Utilizando inputs e format
 # =============================
+
 nome = input('Qual seu nome? ')
 print('Olá {}! Prazer em te conhecer!'.format(nome))
 
@@ -21,7 +22,7 @@ random.shuffle(lista)
 print(f'A sequência sorteada foi: {lista}')
 
 # =============================
-# 3. Calculando ano Bissexto (if e else)
+# 3. Calculando ano Bissexto (IF e ELSE)
 # =============================
 # Caso 1) É um número divisível por 4, mas não é divisível por 100.
 # Caso 2) É um número divisível por 4, por 100 e por 400.
@@ -38,3 +39,20 @@ if ano % 4 == 0:
             print('Não é bissexto!')
 else:
     print('Não é bissexto!')
+
+# =============================
+# 4. Calculando baseado na data do sistema
+# =============================
+
+from datetime import datetime
+agora = datetime.now()
+atual = agora.year()
+
+ano = int(input('Qual seu ano de nascimento? '))
+
+if 18 > (atual-ano):
+    print(f'Faltam {18-(atual-ano)} ano(s) para você se alistar!')
+elif (atual-ano) == 18:
+    print('Está na hora de se alistar!')
+elif 18 < (atual-ano):
+    print(f'Já passou {(atual-ano)-18} ano(s) do seu alistamento!')
